@@ -115,9 +115,7 @@ define([
         });
 
         it('can be removed and reused', function() {
-            var api = createApi('player', function (instance) {
-                assert.strictEqual(instance, api, 'globalRemovePlayer is called with api instance');
-            });
+            var api = createApi('player');
 
             var removeCount = 0;
             api.on('remove', function (event) {
@@ -240,7 +238,7 @@ define([
             });
         });
 
-        it.skip('has getters that return values before setup', function() {
+        it('has getters that return values before setup', function() {
             var api = createApi('player');
 
             assert.strictEqual(api.getContainer(), document.getElementById('player'),
@@ -353,9 +351,9 @@ define([
             done();
         });
 
-        function createApi(id, globalRemoveCallback) {
+        function createApi(id) {
             var container = createContainer(id);
-            return new Api(container, globalRemoveCallback || _.noop);
+            return new Api(container);
         }
 
         function createContainer(id) {

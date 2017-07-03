@@ -1,0 +1,23 @@
+{
+  "source": {
+    "include": [
+      "src/js/jwplayer.js",
+      "src/js/api/api.js"
+    ]
+  },
+  "opts": {
+    "debug": true,
+    "destination": "./docs/",
+    "readme": "./README.md",
+    "template": "templates/default"
+  },
+  "templates": {
+    "applicationName": "JW Player"
+  },
+  "plugins": ["plugins/markdown"],
+  "markdown": {
+    "parser"   : "gfm",
+    "idIdHeadings": true,
+    "tags": ["deprecated"]
+  }
+}

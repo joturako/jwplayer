@@ -271,6 +271,11 @@ module.exports = function(grunt) {
                     'bin-debug/',
                     'bin-release/'
                 ]
+            },
+            docs: {
+                src: [
+                    'docs/'
+                ]
             }
         }
     });
@@ -349,6 +354,7 @@ module.exports = function(grunt) {
         'clean',
         'build-js',
         'build-flash',
+        // jsdocs
         'karma:local'
     ]);
 
